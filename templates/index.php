@@ -335,7 +335,7 @@
 			<div class="team__members uk-flex uk-flex-center" data-uk-grid data-uk-scrollspy="cls:uk-animation-fade; target: .team__member__wrap; delay: 300">
 				<div class="team__member__wrap uk-width-1-2 uk-width-1-4@m">
 					<a class="team__member" href="#contacts">
-						<div class="cover__photo uk-background-cover uk-transition-toggle" data-src="img/team/1.jpg" data-uk-img><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></div><span class="team__name">Denrynz HBK</span> <span class="team__vocation">(Mr. Impressive) Artist
+						<div class="cover__photo uk-background-cover uk-transition-toggle" data-src="<?php echo SpartazMusic::assetsUrl(); ?>img/team/1.jpg" data-uk-img><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></div><span class="team__name">Denrynz HBK</span> <span class="team__vocation">(Mr. Impressive) Artist
 						</span>
 					</a>
 				</div>
@@ -366,71 +366,27 @@
 		<div class="container--special uk-container uk-container-large">
 			<div class="slider slider--news uk-position-relative uk-slider uk-slider-container" tabindex="-1" data-uk-slider="finite: true">
 				<ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-5@xl uk-grid" data-uk-grid="" style="transform: translate3d(0px, 0px, 0px);">
-					<li tabindex="-1" class="uk-active">
-						<div class="uk-card">
-							<div class="uk-card-media-top"><a href="https://www.spartazofficial.com.ng/at-all-at-all-denrynz-hbk/" class="cover__photo uk-background-cover uk-transition-toggle" data-src="https://www.spartazofficial.com.ng/wp-content/uploads/2019/12/80537403_581515756030080_4902158646680485888_n.jpg" data-uk-img=""><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></a>
-							</div>
-							<div class="uk-card-body">
-								<h3 class="news__title">At All At All – Denrynz HBK</h3>
-								<div class="uk-flex uk-flex-middle uk-flex-between">
-									<div class="events__date uk-width-auto"><span class="events__day">26</span> <span class="events__month">dec</span> <span class="events__year">2019</span>
-									</div><a href="https://www.spartazofficial.com.ng/at-all-at-all-denrynz-hbk/" class="news__more btn btn--more">Read more<span class="icon icon--dots"></span></a>
+					<?php
+					$posts = get_posts();
+					//loop
+					foreach ($posts as $post) {
+					?>
+						<li tabindex="-1" class="uk-active">
+							<div class="uk-card">
+								<div class="uk-card-media-top"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>" class="cover__photo uk-background-cover uk-transition-toggle" data-src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID)); ?>" data-uk-img=""><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></a>
+								</div>
+								<div class="uk-card-body">
+									<h3 class="news__title"><?php echo esc_html($post->post_title); ?></h3>
+									<div class="uk-flex uk-flex-middle uk-flex-between">
+										<div class="events__date uk-width-auto"><span class="events__day"><?php echo get_the_date('j', $post->ID); ?></span> <span class="events__month"><?php echo get_the_date('F', $post->ID); ?></span> <span class="events__year"><?php echo get_the_date('Y', $post->ID); ?></span>
+										</div><a href="<?php echo esc_url(get_permalink($post->ID)); ?>" class="news__more btn btn--more">Read more<span class="icon icon--dots"></span></a>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li tabindex="-1" class="uk-active">
-						<div class="uk-card">
-							<div class="uk-card-media-top"><a href="https://www.spartazofficial.com.ng/razzy-storms-the-street-with-new-dance-make-we-dance/" class="cover__photo uk-background-cover uk-transition-toggle" data-src="https://www.spartazofficial.com.ng/wp-content/uploads/2019/11/74786695_395075674713890_6456679273003483136_n.jpg" data-uk-img=""><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></a>
-							</div>
-							<div class="uk-card-body">
-								<h3 class="news__title">Razzy Storms the Street with New Dance “Make We Dance”</h3>
-								<div class="uk-flex uk-flex-middle uk-flex-between">
-									<div class="events__date uk-width-auto"><span class="events__day">15</span> <span class="events__month">nov</span> <span class="events__year">2019</span>
-									</div><a href="https://www.spartazofficial.com.ng/razzy-storms-the-street-with-new-dance-make-we-dance/" class="news__more btn btn--more">Read more<span class="icon icon--dots"></span></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li tabindex="-1" class="uk-active">
-						<div class="uk-card">
-							<div class="uk-card-media-top"><a href="https://www.spartazofficial.com.ng/fiesta-by-chino-la-mala-ft-razzy/" class="cover__photo uk-background-cover uk-transition-toggle" data-src="https://www.spartazofficial.com.ng/wp-content/uploads/2019/06/64424001_394231537853506_137502102376153088_n.jpg" data-uk-img=""><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></a>
-							</div>
-							<div class="uk-card-body">
-								<h3 class="news__title">Fiesta by Chino La Mala Ft. Razzy</h3>
-								<div class="uk-flex uk-flex-middle uk-flex-between">
-									<div class="events__date uk-width-auto"><span class="events__day">11</span> <span class="events__month">jun</span> <span class="events__year">2019</span>
-									</div><a href="https://www.spartazofficial.com.ng/fiesta-by-chino-la-mala-ft-razzy/" class="news__more btn btn--more">Read more<span class="icon icon--dots"></span></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li tabindex="-1" class="uk-active">
-						<div class="uk-card">
-							<div class="uk-card-media-top"><a href="https://www.spartazofficial.com.ng/listen-to-what-spartaz-denrynz-hbk-has-to-say-on-nonstop-in-this-freestyle-vibe/" class="cover__photo uk-background-cover uk-transition-toggle" data-src="https://www.spartazofficial.com.ng/wp-content/uploads/2019/01/d.jpg" data-uk-img=""><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></a>
-							</div>
-							<div class="uk-card-body">
-								<h3 class="news__title">Listen to what Spartaz Denrynz HBK has to say on #Nonstop in this Freestyle Vibe</h3>
-								<div class="uk-flex uk-flex-middle uk-flex-between">
-									<div class="events__date uk-width-auto"><span class="events__day">2</span> <span class="events__month">apr</span> <span class="events__year">2019</span>
-									</div><a href="https://www.spartazofficial.com.ng/listen-to-what-spartaz-denrynz-hbk-has-to-say-on-nonstop-in-this-freestyle-vibe/" class="news__more btn btn--more">Read more<span class="icon icon--dots"></span></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li tabindex="-1" class="uk-active">
-						<div class="uk-card">
-							<div class="uk-card-media-top"><a href="https://www.spartazofficial.com.ng/freak-by-spartaz/" class="cover__photo uk-background-cover uk-transition-toggle" data-src="https://www.spartazofficial.com.ng/wp-content/uploads/2019/01/Spartaz-696x696.jpg" data-uk-img=""><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></a>
-							</div>
-							<div class="uk-card-body">
-								<h3 class="news__title">Spartaz Hits Out with New Track ‘FREAK’ as 2018 Packs</h3>
-								<div class="uk-flex uk-flex-middle uk-flex-between">
-									<div class="events__date uk-width-auto"><span class="events__day">26</span> <span class="events__month">jan</span> <span class="events__year">2019</span>
-									</div><a href="https://www.spartazofficial.com.ng/freak-by-spartaz/" class="news__more btn btn--more">Read more<span class="icon icon--dots"></span></a>
-								</div>
-							</div>
-						</div>
-					</li>
+						</li>
+					<?php
+					}
+					?>
 				</ul>
 				<a class="slider__control uk-position-center-left uk-icon uk-slidenav-previous uk-slidenav uk-invisible" href="#" data-uk-slidenav-previous="" data-uk-slider-item="previous" style="left: 5.5px;">
 					<svg width="14px" height="24px" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg" data-svg="slidenav-previous">
@@ -453,7 +409,7 @@
 			<div class="team__members uk-flex uk-flex-center" data-uk-grid data-uk-scrollspy="cls:uk-animation-fade; target: .team__member__wrap; delay: 300">
 				<div class="team__member__wrap uk-width-1-2 uk-width-1-4@m">
 					<a href="#contacts" class="team__member">
-						<div class="cover__photo uk-background-cover uk-transition-toggle" data-src="<?php echo SpartazMusic::assetsUrl(); ?>img/team/manager.jpg" data-uk-img><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></div><span class="team__name">Phonkey Nation</span> <span class="team__vocation">Label Manager
+						<div class="cover__photo uk-background-cover uk-transition-toggle" data-src="https://res.cloudinary.com/biggidroid/image/upload/v1671566326/image_50435329_afaibi.jpg" data-uk-img><span class="cover__link boxshadow icon icon--dots uk-transition-scale-up"></span></div><span class="team__name">Phonkey Nation</span> <span class="team__vocation">Label Manager
 						</span>
 					</a>
 				</div>

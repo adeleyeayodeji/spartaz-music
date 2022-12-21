@@ -6,7 +6,7 @@
  * Author:      Adeleye Ayodeji
  * Author URI:  https://www.adeleyeayodeji.com
  * Description: This plugin is for the Spartaz Music website
- * Version:     0.1.0
+ * Version:     0.1.1
  * License:     GPL-2.0+
  * License URL: http://www.gnu.org/licenses/gpl-2.0.txt
  * text-domain: spartaz-music
